@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Nuevo Autor</title>
+</head>
+
+<body>
+
+
+<h1>Agregar Autor</h1>
+
+
+<form th:action="@{/autores/guardar}"
+      th:object="${autor}"
+      method="post">
+
+
+    <label>Nombre:</label>
+
+    <input type="text" th:field="*{nombre}">
+
+    <br>
+
+
+    <label>Nacionalidad:</label>
+
+    <input type="text" th:field="*{nacionalidad}">
+
+    <br>
+
+
+    <label>Fecha nacimiento:</label>
+
+    <input type="text" th:field="*{fechaNacimiento}">
+
+    <br>
+
+
+    <button type="submit">
+        Guardar
+    </button>
+
+
+</form>
+
+
+</body>
+</html>
