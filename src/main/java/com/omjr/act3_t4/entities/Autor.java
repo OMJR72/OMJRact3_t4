@@ -1,18 +1,13 @@
 package com.omjr.act3_t4.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-
-import java.util.List;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "autor")
 public class Autor {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
@@ -24,9 +19,6 @@ public class Autor {
 
     @Column(name = "fecha_nacimiento")
     private String fechaNacimiento;
-
-    @OneToMany(mappedBy = "autor")
-    private List<Libro> libros;
 
     public Autor() {
     }
@@ -68,13 +60,5 @@ public class Autor {
 
     public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public List<Libro> getLibros() {
-        return libros;
-    }
-
-    public void setLibros(List<Libro> libros) {
-        this.libros = libros;
     }
 }
